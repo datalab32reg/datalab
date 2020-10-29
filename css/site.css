@@ -1,0 +1,98 @@
+@import url('gilroy/stylesheet.css');
+
+:root {
+    --violet-color: #5652fd;
+    --violet-muffle-color: rgba(86, 82, 253, 0.50);
+    --purple-color: #eb04fc;
+    --purple-muffle-color: rgba(235, 4, 252, 0.50);
+    --white-color: white;
+    --white-muffle-color: rgba(255, 255, 255, 0.50);
+    --light-gray-color: #ebeeff;
+    --black-color: black;
+    --main-text-color: black;
+    --danger-color: orangered;
+    --green-color: forestgreen;
+    --ref-color: #5652fd;
+    --muffle-color: rgba(128, 128, 128, 0.30);
+    --background-muffle-color: rgba(0, 0, 0, 0.20);
+    --small-round: 5px;
+    --medium-round: 10px;
+    font-family: Gilroy;
+    background-color: var(--violet-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    width: calc(100% - 40px * 2);
+    height: calc(100vh - 40px * 2);
+    background-color: var(--white-color);
+    border-radius: var(--medium-round);
+}
+
+main {
+    position : relative;
+    display: block;
+    height: 100%;
+    width : 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+main::-webkit-scrollbar {
+    width: 0;
+}
+
+#app {
+    margin: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--violet-color);
+}
+
+.section{
+    margin-top: 10px;
+    border: 2px solid var(--violet-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.section h2{
+    margin: 0px;
+    padding-left: 5px;
+}
+
+.section h2+*{
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1{
+    margin: 5px;
+}
+
+.text-glow {
+    -webkit-text-stroke: 1px var(--violet-color);
+    text-shadow: var(--violet-color) 0 0 10px;
+    color : var(--white-color);
+}
+
+@media(max-width:768px), (max-device-width:768px) {
+    body {
+        flex-direction: column;
+        margin: 10px;
+        height: 100%;
+        min-height: calc(100vh - 10px * 2);
+        width: calc(100% - 10px * 2);
+    }
+
+    main {
+        height: auto;
+        font-size: 35px;
+    }
+}
